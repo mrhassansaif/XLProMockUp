@@ -201,26 +201,33 @@
       }
 
       /* ================= DOTS (OUTSIDE HERO) ================= */
-      .slider-dots-wrapper {
-        display: flex;
-        justify-content: center;
-        margin: 18px 0 28px;
-      }
-      .dots {
-        display: flex;
-        gap: 8px;
-      }
-      .dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: rgba(0, 0, 0, 0.15);
-        cursor: pointer;
-      }
-      .dot.active {
-        background: var(--accent-2);
-        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-      }
+     .slider-dots-wrapper {
+  position: absolute;
+  bottom: 20px;        /* distance from bottom of hero */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;         /* ensure it appears above the slides */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+     .dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5); /* semi-transparent to be visible over image */
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #ffcc00;  /* active dot color */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
 
       /* ================= CARDS (UNCHANGED) ================= */
       .cards {
@@ -323,7 +330,7 @@
 }
 
 .card3 {
-  background: linear-gradient(to right, #e0e0e0, #ffffff); /* gray to white gradient */
+  background: linear-gradient(to right, #e0e0e0, #ffffff); 
   border-radius: 16px;
   padding: 15px;
   display: flex;
@@ -595,49 +602,39 @@
         </div>
       </header>
 
-      <!-- ================= HERO ================= -->
-      <section class="hero">
-        <!-- SLIDE 1 -->
-        <article class="slide is-active">
-          <div class="visual">
-            <img
-              src="Images/Crousel 1.png"
-              alt="Slide 1"
-              style="width: 100%; height: 100%; object-fit: contain"
-            />
-          </div>
-        </article>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <!-- SLIDE 1 -->
+  <article class="slide is-active">
+    <div class="visual">
+      <img src="Images/Crousel 1.png" alt="Slide 1" />
+    </div>
+  </article>
 
-        <!-- SLIDE 2 -->
-        <article class="slide">
-          <div class="visual">
-            <img
-              src="Images/Crousel 1.png"
-              alt="Slide 2"
-              style="width: 100%; height: 100%; object-fit: contain"
-            />
-          </div>
-        </article>
+  <!-- SLIDE 2 -->
+  <article class="slide">
+    <div class="visual">
+      <img src="Images/Crousel 1.png" alt="Slide 2" />
+    </div>
+  </article>
 
-        <!-- SLIDE 3 -->
-        <article class="slide">
-          <div class="visual">
-            <img
-              src="Images/Crousel 1.png"
-              alt="Slide 3"
-              style="width: 100%; height: 100%; object-fit: contain"
-            />
-          </div>
-        </article>
-      </section>
+  <!-- SLIDE 3 -->
+  <article class="slide">
+    <div class="visual">
+      <img src="Images/Crousel 1.png" alt="Slide 3" />
+    </div>
+  </article>
 
-      <div class="slider-dots-wrapper">
-        <div class="dots">
-          <div class="dot active"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-      </div>
+  <!-- Dots inside hero -->
+  <div class="slider-dots-wrapper">
+    <div class="dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</section>
+
 
       <!-- ================= CARDS (ORIGINAL) ================= -->
       <section class="cards" aria-label="Quick links">
